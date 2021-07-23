@@ -13,10 +13,10 @@ import org.kamiblue.commons.extension.max
 object SignBookCommand : ClientCommand(
     name = "signbook",
     alias = arrayOf("sign"),
-    description = "Colored book names. &f#n&7 for a new line and &f&&7 for colour codes"
+    description = "Colored book names. &f#n&7 for a new line and &f&&7 for color codes"
 ) {
     init {
-        string("title") { titleArg ->
+        greedy("title") { titleArg ->
             executeSafe {
                 val item = player.inventory.getCurrentItem()
 
